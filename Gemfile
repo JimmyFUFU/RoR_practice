@@ -35,7 +35,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'grape', '~> 1.3', '>= 1.3.2'
 gem 'grape-entity'
 gem 'grape_on_rails_routes'
-
+gem 'faker'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
