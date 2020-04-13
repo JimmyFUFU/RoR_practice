@@ -1,0 +1,36 @@
+<h1>課程列表</h1>
+
+<%= link_to "新增課程", new_lesson_path %>
+
+<table>
+  <thead>
+    <tr>
+      <td>課程主題</td>
+      <td>價格</td>
+      <td>幣別</td>
+      <td>類型</td>
+      <td>狀態</td>
+      <td>URL</td>
+      <td>描述</td>
+      <td>課程效期</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @lessons.each do |lesson| %>
+    <tr>
+      <td><%= lesson.title %></td>
+      <td><%= lesson.price %></td>
+      <td><%= lesson.currency %></td>
+      <td><%= lesson.category %></td>
+      <td><%= lesson.status %></td>
+      <td><%= lesson.url %></td>
+      <td><%= lesson.description %></td>
+      <td><%= lesson.expired_time %></td>
+      <td>
+        <%= link_to "編輯", edit_lesson_path(lesson) %>
+        <%= link_to "刪除", lesson_path(lesson), method: "delete", data: { confirm: "確認刪除" } %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
