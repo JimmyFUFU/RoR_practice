@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   get "admin/login" => "managerlogin#new"
   post "admin/login" => "managerlogin#create"
   delete "admin/login" => "managerlogin#destroy"
+
+  mount V1::Base => '/'
 end
