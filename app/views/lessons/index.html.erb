@@ -1,8 +1,10 @@
 <h1>課程列表</h1>
 
-<%= link_to "新增課程", new_lesson_path %>
-<%= link_to "管理員登入", admin_login_url %>
-<%= link_to "成為管理員", new_managers_path %>
+<span><%= link_to "新增課程", new_lesson_path %></span>
+<span id="login"><%= link_to "管理員登入", admin_login_url %></span>
+<span id="signin"><%= link_to "成為管理員", new_managers_path %></span>
+<span id="logout"><%= link_to "登出", admin_login_url, method: "delete", data: { confirm: "確定登出?" } %></span>
+
 <table>
   <thead>
     <tr>
@@ -26,7 +28,7 @@
       <td><%= lesson.status %></td>
       <td><%= lesson.url %></td>
       <td><%= lesson.description %></td>
-      <td><%= lesson.expired_time %></td>
+      <td><%= lesson.expired_days %></td>
       <td>
         <%= link_to "編輯", edit_lesson_path(lesson) %>
         <%= link_to "刪除", lesson_path(lesson), method: "delete", data: { confirm: "確認刪除" } %>

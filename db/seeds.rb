@@ -14,7 +14,7 @@
                   status: "launch",
                   url: Faker::Internet.url,
                   description: Faker::Books::Lovecraft.sentences,
-                  expired_time: Faker::Time.between_dates(from: Date.today - 1, to: Date.today + 5, period: :all),
+                  expired_days: Faker::Number.between(from: 1, to: 30),
                   manager_id: Faker::Number.between(from: 1, to: 10))
 end
 
@@ -26,6 +26,6 @@ end
                   status: "soldOut",
                   url: Faker::Internet.url,
                   description: Faker::Books::Lovecraft.sentences,
-                  expired_time: Faker::Time.between_dates(from: Date.today - 1, to: Date.today + 5, period: :all),
+                  expired_days: Faker::Number.between(from: 1, to: 30),
                   manager_id: Faker::Number.between(from: 1, to: 10))
 end

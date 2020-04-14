@@ -5,7 +5,7 @@
   <%= f.text_field :title %> <br />
 
   <%= f.label :price, "價格" %>
-  <%= f.text_field :price %> <br />
+  <%= f.number_field :price %> <br />
 
   <%= f.label :currency, "幣別" %>
   <%= f.text_field :currency %> <br />
@@ -25,8 +25,8 @@
   <%= f.label :description, "描述" %>
   <%= f.text_area :description %> <br />
 
-  <%= f.label :expired_time, "課程效期" %>
-  <%= f.datetime_field :expired_time %> <br />
+  <%= f.label :expired_days, "課程效期" %>
+  <%= f.number_field :expired_days, within: 1...32 %> <br />
 
   <%= f.submit %>
 <% end %>
