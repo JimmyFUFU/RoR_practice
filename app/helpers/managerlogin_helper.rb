@@ -1,0 +1,2 @@
+module ManagerloginHelper
+end
