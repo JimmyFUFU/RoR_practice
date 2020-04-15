@@ -31,21 +31,25 @@
 # end
 
 Order.create!(  lesson_id: "1",
-                user_id: "2", 
+                user_id: "2",
                 checkout_time: Faker::Date.in_date_period(year: 2020, month: 3),
-                expired_time: Faker::Date.in_date_period(year: 2020, month: 4))
+                expired_time: Faker::Date.in_date_period(year: 2020, month: 4),
+                total: 26755)
 
 Order.create!(  lesson_id: "1",
                 user_id: "1",
                 checkout_time: Faker::Date.in_date_period(year: 2020, month: 3),
-                expired_time: Faker::Date.in_date_period(year: 2020, month: 4))
+                expired_time: Faker::Date.in_date_period(year: 2020, month: 4),
+                total: 26755)
 
 Order.create!(  lesson_id: "1",
                 user_id: "1",
                 checkout_time: Faker::Date.in_date_period(year: 2020, month: 3),
-                expired_time: Faker::Date.in_date_period(year: 2020, month: 4))
+                expired_time: Faker::Date.in_date_period(year: 2020, month: 4),
+                total: 26755)
 
 Order.create!(  lesson_id: "2",
                 user_id: "2",
                 checkout_time: Faker::Date.in_date_period(year: 2020, month: 3),
-                expired_time: Faker::Date.in_date_period(year: 2020, month: 4))
+                expired_time: Faker::Date.in_date_period(year: 2020, month: 4),
+                total: 362)
