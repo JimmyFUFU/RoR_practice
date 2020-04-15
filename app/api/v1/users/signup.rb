@@ -15,6 +15,7 @@ module V1
           user = User.new(name: params[:name], email: params[:email], password: params[:password], access_token: token)
           if user.save
             thisUser = User.find_by(email: params[:email])
+            status 200
             {
               access_token: thisUser.access_token,
               user: {
@@ -24,6 +25,7 @@ module V1
               }
             }
           else
+            status 400
             {
               error: "Sign Up Failed"
             }

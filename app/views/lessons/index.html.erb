@@ -8,6 +8,7 @@
 <table>
   <thead>
     <tr>
+      <td>課程編號</td>
       <td>課程主題</td>
       <td>價格</td>
       <td>幣別</td>
@@ -21,6 +22,7 @@
   <tbody>
     <% @lessons.each do |lesson| %>
     <tr>
+      <td><%= lesson.id %></td>
       <td><%= lesson.title %></td>
       <td><%= lesson.price %></td>
       <td><%= lesson.currency %></td>

@@ -8,11 +8,11 @@ module V1
       resource :user do
         desc 'User log in'
         post :login do
-          puts "log in"
           thisUser = User.find_by(email: params[:email])
           if thisUser and thisUser.password == Digest::MD5.hexdigest(params[:password])
             token = Digest::MD5.hexdigest(params[:email] + Time.now.to_s)
             thisUser.update_attribute(:access_token, token)
+            status 200
             {
               access_token: token,
               user: {
@@ -22,6 +22,7 @@ module V1
               }
             }
           else
+            status 400
             {
               error: "Log in Failed"
             }
