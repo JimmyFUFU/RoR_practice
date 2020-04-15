@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200415080402) do
+ActiveRecord::Schema.define(version: 20200415083120) do
 
   create_table "lessons", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20200415080402) do
     t.date "checkout_time"
     t.date "expired_time"
     t.integer "total"
+    t.string "currency"
   end
 
   create_table "users", force: :cascade do |t|

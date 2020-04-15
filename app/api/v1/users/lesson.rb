@@ -8,7 +8,7 @@ module V1
       resource :user do
         desc "show user's lesson"
         get :lesson do
-
+          
         end
       end
     end

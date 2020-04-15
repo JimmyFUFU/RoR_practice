@@ -27,7 +27,7 @@ module V1
                 status 400
                 { error: "You are Already have this lesson" }
               else
-                newOrder = Order.new(lesson_id: thisLesson.id, user_id: thisUser.id, total: thisLesson.price, checkout_time: Date.today, expired_time: Date.today+thisLesson.expired_days)
+                newOrder = Order.new( lesson_id: thisLesson.id, user_id: thisUser.id, checkout_time: Date.today, expired_time: Date.today+thisLesson.expired_days, total: thisLesson.price, currency:thisLesson.currency)
                 if newOrder.save
                 status 200
                 { msg: "checkout successfully"}
