@@ -30,7 +30,7 @@
       <td><%= lesson.status %></td>
       <td><%= lesson.url %></td>
       <td><%= lesson.description %></td>
-      <td><%= lesson.expired_days %></td>
+      <td><%= lesson.expired_days %> days</td>
       <td>
         <%= link_to "編輯", edit_lesson_path(lesson), :id => "editlesson" %>
         <%= link_to "刪除", lesson_path(lesson), :id => "deletelesson", method: "delete", data: { confirm: "確認刪除" } %>
