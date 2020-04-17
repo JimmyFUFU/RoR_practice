@@ -15,7 +15,7 @@
                   url: Faker::Internet.url,
                   description: Faker::Books::Lovecraft.sentences,
                   expired_days: Faker::Number.between(from: 1, to: 31),
-                  manager_id: Faker::Number.between(from: 1, to: 3))
+                  manager_id: Faker::Number.between(from: 1, to: 5))
 end
 
 2.times do
@@ -27,7 +27,7 @@ end
                   url: Faker::Internet.url,
                   description: Faker::Books::Lovecraft.sentences,
                   expired_days: Faker::Number.between(from: 1, to: 31),
-                  manager_id: Faker::Number.between(from: 1, to: 3))
+                  manager_id: Faker::Number.between(from: 1, to: 5))
 end
 
 2.times do
@@ -39,33 +39,5 @@ end
                   url: Faker::Internet.url,
                   description: Faker::Books::Lovecraft.sentences,
                   expired_days: Faker::Number.between(from: 1, to: 31),
-                  manager_id: Faker::Number.between(from: 1, to: 3))
+                  manager_id: Faker::Number.between(from: 1, to: 5))
 end
-
-Order.create!(  lesson_id: "1",
-                user_id: "2",
-                checkout_time: Faker::Date.in_date_period(year: 2020, month: 3),
-                expired_time: Faker::Date.in_date_period(year: 2020, month: 4),
-                total: 26755,
-                currency: "RSD")
-
-Order.create!(  lesson_id: "1",
-                user_id: "1",
-                checkout_time: Faker::Date.in_date_period(year: 2020, month: 3),
-                expired_time: Faker::Date.in_date_period(year: 2020, month: 4),
-                total: 26755,
-                currency: "RSD")
-
-Order.create!(  lesson_id: "1",
-                user_id: "1",
-                checkout_time: Faker::Date.in_date_period(year: 2020, month: 3),
-                expired_time: Faker::Date.in_date_period(year: 2020, month: 4),
-                total: 26755,
-                currency: "RSD")
-
-Order.create!(  lesson_id: "2",
-                user_id: "2",
-                checkout_time: Faker::Date.in_date_period(year: 2020, month: 3),
-                expired_time: Faker::Date.in_date_period(year: 2020, month: 4),
-                total: 362,
-                currency: "MDL")
