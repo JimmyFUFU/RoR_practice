@@ -18,6 +18,7 @@ class LessonsController < ApplicationController
 
   def create
     @lesson = Lesson.new(lesson_params)
+    @lesson[:manager_id] = session[:manager_id]
 
     if @lesson.save
       flash[:notice] =  "Create lesson successfully"
@@ -34,7 +35,8 @@ class LessonsController < ApplicationController
 
   def update
     @lesson = Lesson.find_by(id: params[:id])
-
+    @lesson[:manager_id] = session[:manager_id]
+    
     if @lesson.update(lesson_params)
       flash[:notice] = "Edit lesson successfully"
       redirect_to lessons_path
@@ -52,7 +54,7 @@ class LessonsController < ApplicationController
 
   private
   def lesson_params
-    params.require(:lesson).permit(:title, :price , :concurrcy, :category, :status, :url, :description, :expired_days)
+    params.require(:lesson).permit(:title, :price , :currency, :category, :status, :url, :description, :expired_days)
   end
 
 end
