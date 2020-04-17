@@ -1,5 +1,3 @@
-require 'digest'
-require 'date'
 module V1
   module Users
     class Signup < Grape::API
