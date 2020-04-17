@@ -1,22 +1,22 @@
+<%= link_to "管理員登入", admin_login_url, :id => "login" %>
+<%= link_to "成為管理員", new_managers_path, :id => "signup" %>
+<%= link_to "登出", admin_login_url, :id => "logout", method: "delete", data: { confirm: "確定登出?"} %>
+
 <h1>課程列表</h1>
-
-<span><%= link_to "新增課程", new_lesson_path %></span>
-<span id="login"><%= link_to "管理員登入", admin_login_url %></span>
-<span id="signin"><%= link_to "成為管理員", new_managers_path %></span>
-<span id="logout"><%= link_to "登出", admin_login_url, method: "delete", data: { confirm: "確定登出?" } %></span>
-
+<%= link_to "新增課程", new_lesson_path, :id => "newLesson" %>
 <table>
   <thead>
     <tr>
-      <td>課程編號</td>
-      <td>課程主題</td>
-      <td>價格</td>
-      <td>幣別</td>
+      <td style="width: 70px; height: 40px;">課程編號</td>
+      <td style="width: 70px;">課程主題</td>
+      <td style="width: 40px;">價格</td>
+      <td style="width: 40px;">幣別</td>
       <td>類型</td>
       <td>狀態</td>
       <td>URL</td>
       <td>描述</td>
-      <td>課程效期</td>
+      <td style="width:70px;">課程效期</td>
+      <td style="width:55px;"></td>
     </tr>
   </thead>
   <tbody>
@@ -32,8 +32,8 @@
       <td><%= lesson.description %></td>
       <td><%= lesson.expired_days %></td>
       <td>
-        <%= link_to "編輯", edit_lesson_path(lesson) %>
-        <%= link_to "刪除", lesson_path(lesson), method: "delete", data: { confirm: "確認刪除" } %>
+        <%= link_to "編輯", edit_lesson_path(lesson), :id => "editlesson" %>
+        <%= link_to "刪除", lesson_path(lesson), :id => "deletelesson", method: "delete", data: { confirm: "確認刪除" } %>
       </td>
     </tr>
     <% end %>

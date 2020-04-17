@@ -1,4 +1,3 @@
-require 'digest'
 class ManagersController < ApplicationController
 
   skip_before_action :authorize

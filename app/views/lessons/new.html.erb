@@ -1,35 +1,6 @@
 <h1>新增課程</h1>
 
-<%= form_for(@lesson) do |f| %>
-  <%= f.label :title, "課程主題" %>
-  <%= f.text_field :title %> <br />
-
-  <%= f.label :price, "價格" %>
-  <%= f.number_field :price %> <br />
-
-  <%= f.label :currency, "幣別" %>
-  <%= f.text_field :currency %> <br />
-
-  <%= f.label :category, "類型" %>
-  <%= f.text_field :category %> <br />
-
-  <%= f.label :status, "狀態" %>
-  <%= f.radio_button :status, "available" %>
-  <%= f.label :status, "上架" %>
-  <%= f.radio_button :status, "unavailable" %>
-  <%= f.label :status, "下架" %><br />
-
-  <%= f.label :url, "URL" %>
-  <%= f.url_field :url %> <br />
-
-  <%= f.label :description, "描述" %>
-  <%= f.text_area :description %> <br />
-
-  <%= f.label :expired_days, "課程效期" %>
-  <%= f.number_field :expired_days, within: 1...32 %> days<br />
-
-  <%= f.submit %>
-<% end %>
+<%= render "form", lesson: @lesson %>
 
 <br />
 <%= link_to '回課程列表', lessons_path %>
