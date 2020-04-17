@@ -21,6 +21,7 @@ class ManagerloginController < ApplicationController
   def destroy
     session[:manager_id] = nil
     session[:manager_name] = nil
-    redirect_to lessons_path, notice: "Logged out"
+    flash[:notice] = "Logged out"
+    redirect_to lessons_path
   end
 end
