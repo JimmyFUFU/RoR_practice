@@ -1,4 +1,3 @@
-require 'digest'
 class ManagerloginController < ApplicationController
 
   skip_before_action :authorize
@@ -14,8 +13,8 @@ class ManagerloginController < ApplicationController
       session[:manager_name] = manager.name
       redirect_to lessons_path
     else
-      flash.alert = "User not found."
-      puts "User not found"
+      flash[:alert] = "User not found."
+      redirect_to admin_login_url
     end
   end
 

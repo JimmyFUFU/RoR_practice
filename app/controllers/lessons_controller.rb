@@ -20,9 +20,11 @@ class LessonsController < ApplicationController
     @lesson = Lesson.new(lesson_params)
 
     if @lesson.save
-      redirect_to lessons_path, notice: "Create lesson successfully"
+      flash[:notice] =  "Create lesson successfully"
+      redirect_to lessons_path
     else
-      render :new, alert: "Create lesson fail"
+      flash[:alert] = "Create lesson fail"
+      render :new
     end
   end
 
@@ -34,9 +36,11 @@ class LessonsController < ApplicationController
     @lesson = Lesson.find_by(id: params[:id])
 
     if @lesson.update(lesson_params)
-      redirect_to lessons_path, notice: "Edit lesson successfully"
+      flash[:notice] = "Edit lesson successfully"
+      redirect_to lessons_path
     else
-      render :edit, alert: "Edit lesson fail"
+      flash[:alert] = "Edit lesson fail"
+      render :edit
     end
   end
 

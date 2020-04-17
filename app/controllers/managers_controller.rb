@@ -15,9 +15,10 @@ class ManagersController < ApplicationController
       newUser = Manager.find_by(email: params[:manager][:email])
       session[:manager_id] = newUser.id
       session[:manager_name] = newUser.name
-      redirect_to lessons_path, notice: "Sign up successfully"
+      redirect_to lessons_path, flash[:notice] = "Sign up successfully"
     else
-      render :new, alert: "Sign up fail, Please check your infomation"
+      flash[:alert] = "Sign up fail, Please check your infomation"
+      render :new
     end
   end
 

@@ -26,7 +26,7 @@
   <%= f.text_area :description %> <br />
 
   <%= f.label :expired_days, "課程效期" %>
-  <%= f.number_field :expired_days, within: 1...32 %> <br />
+  <%= f.number_field :expired_days, within: 1...32 %> days<br />
 
   <%= f.submit %>
 <% end %>
