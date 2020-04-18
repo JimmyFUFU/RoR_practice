@@ -1,24 +1,69 @@
-# README
+# Snapask Practice
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby version 2.7.0 (x86_64-linux)
+* Rails version 5.1.7
 
-Things you may want to cover:
+### Part 1 
 
-* Ruby version
+http://52.220.14.209:3000/lessons
 
-* System dependencies
+* Sign up and log in first and manipulate lessons
 
-* Configuration
+* Test account
+  * Email : test@test.com
+  * Password : test
+  
+### Part 2 & Part 3
 
-* Database creation
+* Use postman to test API
 
-* Database initialization
+  * Sign up : POST http://52.220.14.209:3000/api/v1/user/signup
+  
+    * **Request Body Example:**
+      ```json=
+      {
+        "name":"test",
+        "email":"test@test.com",
+        "password":"test"
+      }
+      ```
+      ---
+  * Log in : POST http://52.220.14.209:3000/api/v1/user/login
+  
+    * **Request Body Example:**
+      ```json=
+      {
+        "email":"test@test.com",
+        "password":"test"
+      }
+      ```
+      ---
+  * Check out : POST http://52.220.14.209:3000/api/v1/lessons/checkout
+  
+    * **Request Headers:**
 
-* How to run the test suite
+      |     Field     | Type   |      Description      |
+      |:-------------:|:------ |:---------------------:|
+      | Authorization | String | Access token Required |
+    * **Request Body Example:**
+      ```json=
+      {
+          "prime":"[Prime Key from TapPay]",
+          "lesson_id" : "1"
+      }
+      ```
+      ---
+  * User's lesson : GET 
+    * **Request Headers:**
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+      |     Field     | Type   |       Description       |
+      |:-------------:|:------ |:-----------------------:|
+      | Authorization | String | Access token   Required |
+      
+    * All lessons : http://52.220.14.209:3000/api/v1/user/lessons
+    
+    * Available lessons : http://52.220.14.209:3000/api/v1/user/lessons?status=available
+    
+    * Assign category : http://52.220.14.209:3000/api/v1/user/lessons?category=Math
+---
+ Detail note & API Document : https://hackmd.io/@JimmyFu/H1ujXWmdU
