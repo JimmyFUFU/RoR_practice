@@ -1,4 +1,4 @@
-# Snapask Practice
+# RoR Practice
 
 * Ruby version 2.7.0 (x86_64-linux)
 * Rails version 5.1.7
